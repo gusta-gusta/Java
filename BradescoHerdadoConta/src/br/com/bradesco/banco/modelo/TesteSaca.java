@@ -1,4 +1,4 @@
-package PacoteHerdadoConta;
+package br.com.bradesco.banco.modelo;
 
 public class TesteSaca {
 
