@@ -11,7 +11,7 @@ public class TesteConexao {
 		try (Conexao conexao = new Conexao() ) {
 			conexao.leDados();
 		} catch (IllegalStateException ex) {
-			System.out.println("Deu Erro na conexao!");
+			System.out.println("Deu Erro na conexao!!!");
 		}
 	}
 }
