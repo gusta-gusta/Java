@@ -9,7 +9,7 @@ public class TestaContaComExcecaoChecked {
 		try {
 			c.deposita();
 		} catch(MinhaExcecao ex) {
-			System.out.println("Tratamento.....");
+			System.out.println("Tratamento...");
 		}
 
 	}
