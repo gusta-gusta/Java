@@ -4,7 +4,7 @@ package br.com.bradesco.banco.modelo;
 
 
 //new ContaCorrente()
-public class ContaCorrente extends Conta implements Tributavel {
+public class ContaCorrente extends Conta implements Tributavel, PacoteHerdadoConta.Tributavel {
 
 	public ContaCorrente(int agencia, int numero) {
 		super(agencia, numero);
