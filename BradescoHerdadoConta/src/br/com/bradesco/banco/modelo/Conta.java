@@ -31,7 +31,7 @@ public abstract class Conta {
   public abstract void deposita(double arg0);
   
   /**
-   * Valor precisa ser maior que o saldo
+   * Valor precisa ser maior que o saldo.
    * 
    * @param valor
    * @throws SaldoInsuficienteException
