@@ -15,9 +15,8 @@ public class TesteConexao {
 		}
 	}
 }
-		
-		
-		
+
+
 		// ---------------------------
 		//Metodo Antigo
 //		

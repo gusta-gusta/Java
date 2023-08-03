@@ -8,7 +8,7 @@ public class CalculadorDeImposto {
   public CalculadorDeImposto() {
   }
   
-  public void registra(PacoteHerdadoConta.Tributavel tributavel) {
+  public void registra(Tributavel tributavel) {
   }
   
   public double getTotalImposto() {
