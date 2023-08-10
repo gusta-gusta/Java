@@ -9,7 +9,7 @@ public class Cliente {
   
   private java.lang.String profissao;
   
-  Cliente(java.lang.String nome, java.lang.String cpf, java.lang.String profissao) {
+  public Cliente(java.lang.String nome, java.lang.String cpf, java.lang.String profissao) {
   }
   
   public java.lang.String getNome() {
