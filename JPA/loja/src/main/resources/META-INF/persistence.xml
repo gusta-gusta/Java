@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<persistence version="2.2"
+    xmlns="http://xmlns.jcp.org/xml/ns/persistence"
+        xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
+        xsi:schemaLocation="http://xmlns.jcp.org/xml/ns/persistence http://xmlns.jcp.org/xml/ns/persistence/persistence_2_2.xsd">
+        
+        <persistence-unit name="loja" transaction-type="RESOURCE_LOCAL">
+<!-- ### -->
+        	<!-- <class>br.com.alura.loja.modelo.Produto</class>  Algumas bibliotecas precisa informar todas as classes aqui -->
+        	<properties>
+<!-- ### -->
+<!-- Essa linha serve para dizer à JPA qual é a classe e onde está o driver do JDBC. Estamos usando a JPA, mas ela nada mais é do que uma camada de abstração em cima do JDBC. Por "baixo dos panos", de forma oculta, a JPA trabalha com o JDBC. Por isso utilizamos as propriedades do JDBC. -->
+  
+        		<property name="javax.persistence.jdbc.driver" value="org.h2.Driver"/>			
+        		<property name="javax.persistence.jdbc.url" value="jdbc:h2:mem:loja"/>
+        		<property name="javax.persistence.jdbc.user" value="sa"/>
+        		<property name="javax.persistence.jdbc.password" value=""/>
+<!-- ### -->        		
+<!-- Como cada banco de dados pode ter as suas particularidades, o dialeto é o que fará a comunicação correta com o banco de dados. O Hibernate precisa que essa propriedade será fornecida. O valor será a classe do Hibernate que representa o dialeto.  -->    		
+        		<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
+        		<property name="hibernate.show_sql" value="true"/> <!-- Ver oque rola no SQL -->
+        		<property name="hibernate.hbm2ddl.auto" value="update"/>
+        	</properties>
+       	</persistence-unit>
+
+</persistence>
