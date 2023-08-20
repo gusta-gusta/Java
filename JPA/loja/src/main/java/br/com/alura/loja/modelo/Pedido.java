@@ -28,17 +28,20 @@ public class Pedido {
 
 	@ManyToOne
 	private Cliente cliente;
-	// Cacade = Tudo que acontecer com pedido acontece com ItemPedido, efeito cascata.
-		@OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL) // olha, JPA, esse relacionamento, ele já está mapeado lá
+	// Cacade = Tudo que acontecer com pedido acontece com ItemPedido, efeito
+	// cascata.
+	@OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL) // olha, JPA, esse relacionamento, ele já está mapeado lá
 																// do outro lado. Que outro lado? Na classe ItemPedido,
 																// pelo atributo chamado pedido. (Para indicar que se
-																// trata de um relacionamento bidirecional)	
-	private List<ItemPedido> itens = new ArrayList<>(); // para inicializar essa lista como uma lista vazia, porque
-														// senão teremos que sempre ficar fazendo aquele if, if lista
-														// foi instanciada? Se a lista é nula, dá new na lista; if a
-														// lista é nula, dá new na lista. Então teríamos que fazer isso
-														// o tempo inteiro. Para evitar essa checagem, já inicializamos
-														// aqui a coleção.
+																// trata de um relacionamento bidirecional)
+	private List<ItemPedido> itens = new ArrayList<ItemPedido>(); 
+	
+	// para inicializar essa lista como uma lista vazia,porque
+	// senão teremos que sempre ficar fazendo aquele if, if lista
+	// foi instanciada? Se a lista é nula, dá new na lista; if a
+	// lista é nula, dá new na lista. Então teríamos que fazer isso
+	// o tempo inteiro. Para evitar essa checagem, já inicializamos
+	// aqui a coleção.
 
 	// ----------------------- Constructor -------------------
 
