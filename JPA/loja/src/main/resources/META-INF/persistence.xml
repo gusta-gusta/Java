@@ -19,6 +19,7 @@
 <!-- Como cada banco de dados pode ter as suas particularidades, o dialeto é o que fará a comunicação correta com o banco de dados. O Hibernate precisa que essa propriedade será fornecida. O valor será a classe do Hibernate que representa o dialeto.  -->    		
         		<property name="hibernate.dialect" value="org.hibernate.dialect.H2Dialect"/>
         		<property name="hibernate.show_sql" value="true"/> <!-- Ver oque rola no SQL -->
+        		<property name="hibernate.format_sql" value="true"/> <!-- Formata o SQL -->
         		<property name="hibernate.hbm2ddl.auto" value="update"/>
         	</properties>
        	</persistence-unit>

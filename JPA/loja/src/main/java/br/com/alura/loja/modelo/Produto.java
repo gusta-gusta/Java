@@ -33,17 +33,20 @@ public class Produto {
 	  private Categoria categoria; //Foreign key : MANY Produtos TO ONE Categoria
 	  
 //----------------------- Constructor -------------------
-		
-	  public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
+	  
+	public Produto(String nome, String descricao, BigDecimal preco, Categoria categoria) {
+			super();
 			this.nome = nome;
 			this.descricao = descricao;
 			this.preco = preco;
 			this.categoria = categoria;
 		}
 	  
-	  
+		public Produto() {
+		}
+
 //----------------------- Getters & Setters -------------------
-	  
+
 	public Long getId() {
 		return id;
 	}
