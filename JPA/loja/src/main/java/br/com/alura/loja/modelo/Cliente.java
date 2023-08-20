@@ -18,11 +18,19 @@ public class Cliente {
 
 //------------------------Construtor----------------------------------	
 
+	public Cliente(String nome, String cpf) {
+		
+		this.nome = nome;
+		this.cpf = cpf;
+	}
+	
 	public Cliente() {
 
 	}
 
 //------------------------Getters & Setters --------------------------	
+
+
 
 	public Long getId() {
 		return id;
