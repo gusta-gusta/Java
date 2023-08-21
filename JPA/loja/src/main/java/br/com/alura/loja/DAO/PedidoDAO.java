@@ -1,7 +1,6 @@
 package br.com.alura.loja.DAO;
 
 import java.math.BigDecimal;
-import java.util.List;
 
 import javax.persistence.EntityManager;
 
@@ -27,4 +26,10 @@ public class PedidoDAO {
 		pedido = em.merge(pedido);
 		this.em.remove(pedido);
 	}
+	public BigDecimal valorTotalVendido() {
+		String jpql = "SELECT SUM(p.valorTotal) FROM Pedido p";
+		return em.createQuery(jpql, BigDecimal.class)
+				.getSingleResult();
+	}
+	
 }

@@ -85,6 +85,6 @@ public class ProdutoDAO {
                 .setParameter("preco", preco)
                 .getResultList();
     }
-	
+
 	
 }
