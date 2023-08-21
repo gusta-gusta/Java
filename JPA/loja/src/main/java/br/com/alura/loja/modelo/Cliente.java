@@ -1,3 +1,4 @@
+//Teste Trabalho
 package br.com.alura.loja.modelo;
 
 import javax.persistence.Entity;
