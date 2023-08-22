@@ -1,7 +1,10 @@
 package br.com.alura.loja.teste;
 
 import java.math.BigDecimal;
+import java.util.List;
+
 import javax.persistence.EntityManager;
+
 import br.com.alura.loja.DAO.CategoriaDAO;
 import br.com.alura.loja.DAO.ClienteDAO;
 import br.com.alura.loja.DAO.PedidoDAO;
@@ -29,15 +32,26 @@ public class CadastroDePedido{
 		
 		
 		Pedido pedido = new Pedido(cliente);
-		pedido.AdicionarItem(new ItemPedido(10, pedido, produto));
+		pedido.AdicionarItem(new ItemPedido(2, pedido, produto));
 		PedidoDAO pedidoDAO = new PedidoDAO(em);
 		pedidoDAO.cadastrar(pedido);
 		
 		em.getTransaction().commit();
 		
 		BigDecimal totalVendido = pedidoDAO.valorTotalVendido();
-		System.out.println("Valor Total: " + totalVendido);
+		System.out.println("Valor Total: R$" + totalVendido);
+	
 		
+		
+		List<Object[]> relatorio = pedidoDAO.relatorioDeVendas();
+		
+		
+		for (Object[] obj : relatorio) {
+			System.out.println(obj[0]);
+			System.out.println(obj[1]);
+			System.out.println(obj[2]);
+	
+		}
 	}
 	
 	private static void popularBancoDeDados() {
@@ -45,7 +59,7 @@ public class CadastroDePedido{
 		//------------ Categoria		
 			Categoria celulares = new Categoria("CELULAR");				
 		//------------ Produto	
-			Produto celular = new Produto("Xiaomi Redmi 8 PRO", "128gb ram", new BigDecimal("1100"), celulares);
+			Produto celular = new Produto("Xiaomi Redmi 8 PRO", "128gb ram", new BigDecimal("2500"), celulares);
 		//------------ Cliente
 			Cliente cliente = new Cliente("Gustavo", "010.201.312-82");
 
