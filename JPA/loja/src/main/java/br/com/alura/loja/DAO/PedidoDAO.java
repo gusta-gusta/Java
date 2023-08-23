@@ -47,7 +47,13 @@ public class PedidoDAO {
 		return em.createQuery(jpql, RelatorioDeVendasVo.class)
 				.getResultList();
 	}
-	
+																							//O join fetch permite escolher quais relacionamentos serão carregados em determinada consulta, ao invés de sempre os carregar
+	public Pedido buscarPedidoComCliente(Long id) { 			 //:id ---> é um parametro //JOIN FETCH o  cliente que setei como LAZY virá como EAGER pois será necessário nesse momento, e caso faça em.close() ele já foi carrega junto com a entidade 
+		return em.createQuery("SELECT p FROM Pedido p JOIN FETCH p.cliente WHERE p.id = :id", Pedido.class)
+				.setParameter("id", id)
+				.getSingleResult();
+		
+	}
 	
 	
 	

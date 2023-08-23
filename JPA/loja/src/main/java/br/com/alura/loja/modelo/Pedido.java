@@ -8,6 +8,7 @@ import java.util.List;
 import javax.persistence.CascadeType;
 import javax.persistence.Column;
 import javax.persistence.Entity;
+import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
@@ -25,8 +26,8 @@ public class Pedido {
 	private LocalDate data = LocalDate.now();
 	@Column(name = "valor_total")
 	private BigDecimal valorTotal = BigDecimal.ZERO;
-
-	@ManyToOne
+										//fetch podemos alterar EAGER/LAZY 
+	@ManyToOne(fetch = FetchType.LAZY) //@ManyToOne carregamento padrão: EAGER, que carrega junto com a entidade, por mais que você não utilize aquele relacionamento
 	private Cliente cliente;
 	// Cacade = Tudo que acontecer com pedido acontece com ItemPedido, efeito cascata.
 		@OneToMany(mappedBy = "pedido", cascade = CascadeType.ALL) // olha, JPA, esse relacionamento, ele já está mapeado lá
@@ -39,6 +40,8 @@ public class Pedido {
 														// lista é nula, dá new na lista. Então teríamos que fazer isso
 														// o tempo inteiro. Para evitar essa checagem, já inicializamos
 														// aqui a coleção.
+		
+		//OneToMany carregamento padrao: LAZY, que só carrega se for feito o acesso.
 
 	// ----------------------- Constructor -------------------
 
@@ -93,5 +96,15 @@ public class Pedido {
 		this.valorTotal = valorTotal;
 
 	}
+
+	public List<ItemPedido> getItens() {
+		return itens;
+	}
+
+	public void setItens(List<ItemPedido> itens) {
+		this.itens = itens;
+	}
+
+
 
 }
