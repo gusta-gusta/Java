@@ -8,6 +8,7 @@ import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
 import javax.persistence.ManyToOne;
+import javax.persistence.NamedQuery;
 import javax.persistence.Table;
 
 //###
@@ -17,7 +18,9 @@ import javax.persistence.Table;
 //Então, é para isso que serve essa anotação @Entity. 
 
 @Entity
-@Table(name = "produtos") // Informa que apesar da classe ser Produto, no banco é produtos então faz essa mesclagem 
+@Table(name = "produtos") // Informa que apesar da classe ser Produto, no banco é produtos então faz essa mesclagem
+@NamedQuery(name = "Produto.produtosPorCategoria", 
+query = "SELECT p FROM Produto p WHERE p.categoria.nome = :nome")
 public class Produto {
 		
 	  @Id // Diz quem é a chave primaria
