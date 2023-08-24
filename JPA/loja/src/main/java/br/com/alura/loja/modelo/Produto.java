@@ -8,6 +8,8 @@ import javax.persistence.FetchType;
 import javax.persistence.GeneratedValue;
 import javax.persistence.GenerationType;
 import javax.persistence.Id;
+import javax.persistence.Inheritance;
+import javax.persistence.InheritanceType;
 import javax.persistence.ManyToOne;
 import javax.persistence.NamedQuery;
 import javax.persistence.Table;
@@ -22,6 +24,7 @@ import javax.persistence.Table;
 @Table(name = "produtos") // Informa que apesar da classe ser Produto, no banco é produtos então faz essa mesclagem
 @NamedQuery(name = "Produto.produtosPorCategoria", 
 query = "SELECT p FROM Produto p WHERE p.categoria.nome = :nome")
+@Inheritance(strategy = InheritanceType.JOINED) // SINGLE_TABLE --> TABELÃO GIGANTESCO // JOINED ---> Tabelas com o id sendo chave primary e stranger Tabela pai e filhas serão criadas  
 public class Produto {
 		
 	  @Id // Diz quem é a chave primaria

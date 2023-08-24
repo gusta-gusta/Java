@@ -84,9 +84,7 @@ public class ProdutoDAO {
 		return this.em.createQuery(jpql, Produto.class).setParameter("preco", preco).getResultList();
 	}
 
-	
-
-	//--------------------------------- Filtro com JPQL
+	// --------------------------------- Filtro com JPQL
 	public List<Produto> buscarPorParametros(String nome, BigDecimal preco, LocalDate dataCadastro) {
 		String jpql = "SELECT p FROM Produto p WHERE 1=1 ";
 		if (nome != null && !nome.trim().isEmpty()) {
@@ -108,18 +106,17 @@ public class ProdutoDAO {
 		if (dataCadastro != null) {
 			query.setParameter("dataCadastro", dataCadastro);
 		}
-		
+
 		return query.getResultList();
 
 	}
-	 
-	//--------------------------------- Filtro com Criteria Builder 
+
+	// --------------------------------- Filtro com Criteria Builder
 	public List<Produto> buscarPorParametrosComCriteria(String nome, BigDecimal preco, LocalDate dataCadastro) {
 		CriteriaBuilder builder = em.getCriteriaBuilder();
 		CriteriaQuery<Produto> query = builder.createQuery(Produto.class);
 		Root<Produto> from = query.from(Produto.class);
-		
-		Predicate filtros = builder.and();		
+		Predicate filtros = builder.and();
 		if (nome != null && !nome.trim().isEmpty()) {
 			filtros = builder.and(filtros, builder.equal(from.get("nome"), nome));
 		}
@@ -130,23 +127,7 @@ public class ProdutoDAO {
 			filtros = builder.and(filtros, builder.equal(from.get("dataCadastro"), dataCadastro));
 		}
 		query.where(filtros);
-		
 		return em.createQuery(query).getResultList();
-		
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
+
 }
