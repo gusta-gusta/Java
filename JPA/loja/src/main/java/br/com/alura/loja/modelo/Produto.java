@@ -22,8 +22,8 @@ import javax.persistence.Table;
 
 @Entity
 @Table(name = "produtos") // Informa que apesar da classe ser Produto, no banco é produtos então faz essa mesclagem
-//@NamedQuery(name = "Produto.produtosPorCategoria", 
-//query = "SELECT p FROM Produto p WHERE p.CategoriaId.nome = :nome")
+@NamedQuery(name = "Produto.produtosPorCategoria", 
+query = "SELECT p FROM Produto p WHERE p.categoria.id.nome = :nome")
 @Inheritance(strategy = InheritanceType.JOINED) // SINGLE_TABLE --> TABELÃO GIGANTESCO // JOINED ---> Tabelas com o id sendo chave primary e stranger Tabela pai e filhas serão criadas  
 public class Produto {
 		
