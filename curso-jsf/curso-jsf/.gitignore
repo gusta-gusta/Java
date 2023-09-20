@@ -1,9 +1,7 @@
-/build/
 /target/
 /bin/
 /.settings/
 /.metadata/
 .classpath
 .project
-.tern-project
 
