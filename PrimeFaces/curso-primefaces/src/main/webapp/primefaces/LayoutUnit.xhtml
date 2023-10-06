@@ -22,19 +22,25 @@
 
 	</header>
 
-	<h1>Area de Texto</h1>
+	<p:layout fullPage="true">
+		<p:layoutUnit position="north" size="130" header="Topo do layout"></p:layoutUnit>
+		<p:layoutUnit position="west" header="Menu lateral" resizable="true"
+			collapsible="true">
+			<h:form>
+				<p:menu style="width:100%">
+					<p:menuitem value="Cadastro" />
+					<p:menuitem value="Consulta" />
+					<p:menuitem value="Sair" />
+				</p:menu>
+			</h:form>
+		</p:layoutUnit>
+		<p:layoutUnit position="center">
+			<h:form>
+				<p:editor/>
+			</h:form>
+		</p:layoutUnit>
 
-	<p:messages autoUpdate="true" id="msg" />
+	</p:layout>
 
-	<h:form id="form">
-
-		<p:inputTextarea rows="6" style="width: 50%" maxlength="150"
-			placeholder="Descrição" counter="saida"
-			counterTemplate="{0} caracteres restantes(s)" />
-
-	</h:form>
-
-		<p:outputLabel id="saida" />
-	
 </h:body>
 </html>
