@@ -26,14 +26,13 @@
 		<p:panelGrid columns="2" >
 		
 	 		<h:outputText value="Evento"/>
-			<p:selectOneMenu value="#{atividadeBean.atividade.nome}" filter="true" >
-				<f:selectItem itemLabel="Semana de Administração" itemValue="evento 1"/>
-				<f:selectItem itemLabel="Semana do meio ambiente" itemValue="evento 2"/>
-				<f:selectItem itemLabel="Workshop de programação" itemValue="evento 3"/>
+			<p:selectOneMenu value="#{atividadeBean.atividade.tipoAtividade}" filter="true" >
+			<f:selectItems value="#{atividadeBean.atividades}" var="a" itemValue="#{a}" itemLabel="#{a.descricao}"/>
+			
 			</p:selectOneMenu>
 			
 			<p:commandButton value="Enviar" update="label" />	
-			<p:outputLabel value="#{atividadeBean.atividade.nome}" id="label" />
+			<p:outputLabel value="#{atividadeBean.atividade.tipoAtividade.descricao}" id="label" />
 			
 		</p:panelGrid>
 	</h:form>

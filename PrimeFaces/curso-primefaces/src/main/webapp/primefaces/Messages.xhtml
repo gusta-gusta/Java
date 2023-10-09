@@ -7,18 +7,19 @@
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
 	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<title>Pagina de Sucesso</title>
+	<h:outputStylesheet library="css" name="file.css" />
+	<title>PrimeFaces</title>
 </h:head>
 
 <h:body>
+	<p:messages id="msg" autoUpdate="true"/>
 
-	<f:metadata>
-		<f:viewParam name="nomePessoa" value="#{pessoaBean.pessoa.nome}" />
-	</f:metadata>
+	<h:form id="form">
 
+		<p:commandButton value="Mensagem Sucesso" action="#{messagesBean.salvar}" update="msg"/>
+		<p:commandButton value="Mensagem Erro" action="#{messagesBean.erro}" update="msg" />
 
-
-	<h1>#{pessoaBean.pessoa.nome}</h1>
+	</h:form>
 
 </h:body>
 </html>

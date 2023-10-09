@@ -6,8 +6,8 @@ public enum TipoAtividade {
 	
 	private String descricao;
 
-	 String getDescricao() {
-		return descricao;
+	 public String getDescricao() {
+		return this.descricao;
 	}
 
 	TipoAtividade(String descricao) {
