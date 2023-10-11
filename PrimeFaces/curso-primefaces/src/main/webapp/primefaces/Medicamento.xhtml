@@ -1,0 +1,111 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<!DOCTYPE html>
+<html xmlns="http://www.w3.org/1999/xhtml"
+	xmlns:h="http://xmlns.jcp.org/jsf/html"
+	xmlns:f="http://xmlns.jcp.org/jsf/core"
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
+<h:head>
+	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+	<h:outputStylesheet library="css" name="file.css" />
+	<title>Medicamento</title>
+</h:head>
+
+<h:body>
+
+
+	<h:form id="form">
+		<p:messages id="msg" autoUpdate="true" />
+
+		<p:panelGrid columns="2">
+
+			<p:outputLabel value="Medicamento" />
+			<p:inputText size="30" value="#{medicamentoBean.medicamento.nome}"
+				required="true" label="Medicamento" />
+
+			<p:outputLabel value="Apresentação" />
+			<p:inputText size="30"
+				value="#{medicamentoBean.medicamento.apresentacao}" required="true"
+				label="Apresentação" />
+
+
+			<p:outputLabel value="Laboratório" />
+			<p:selectOneMenu value="#{medicamentoBean.medicamento.laboratorio}"
+				required="true" label="Laboratório">
+
+				<f:selectItem itemLabel="Selecione o laboratório"
+					noSelectionOption="true" />
+				<f:selectItem itemLabel="Bayer" itemValue="BAYER" />
+				<f:selectItem itemLabel="Nova Química" itemValue="Nova Química" />
+				<f:selectItem itemLabel="BIO SHOCK" itemValue="BIO SHOCK" />
+				<f:selectItem itemLabel="ACTIVIA" itemValue="ACTIVIA" />
+				<f:selectItem itemLabel="SPACEX" itemValue="SPACEX" />
+				<f:selectItem itemLabel="ZYZZ" itemValue="ZYZZ" />
+			</p:selectOneMenu>
+
+
+			<p:outputLabel value="Registo MS" />
+			<p:inputMask mask="9.9999.9999.999-9" size="13"
+				value="#{medicamentoBean.medicamento.registro}" required="true"
+				label="Registo no Ministério da Sáude" />
+
+			<p:outputLabel value="Preço" />
+			<p:inputText size="4" value="#{medicamentoBean.medicamento.preco}"
+				required="true" label="Preço">
+				<f:convertNumber minFractionDigits="2" locale="pt-BR"
+					minIntegerDigits="0" />
+			</p:inputText>
+
+			<p:outputLabel />
+
+			<p:commandButton value="Cadastrar"
+				action="#{medicamentoBean.adicionar()}" update="form tabela"
+				style="margin-top: 10px" />
+
+		</p:panelGrid>
+
+		<p:dataTable value="#{medicamentoBean.medicamentos}" var="m"
+			id="tabela" paginator="true" rows="5">
+			<p:column headerText="Medicamento">
+				<p:outputLabel value="#{m.nome}" />
+			</p:column>
+
+			<p:column headerText="Apresentação">
+				<p:outputLabel value="#{m.apresentacao}" />
+			</p:column>
+
+			<p:column headerText="Laboratório">
+				<p:outputLabel value="#{m.laboratorio}" />
+			</p:column>
+
+			<p:column headerText="Registro MS">
+				<p:outputLabel value="#{m.registro}" />
+			</p:column>
+
+			<p:column headerText="Preço">
+				<p:outputLabel value="#{m.preco}">
+					<f:convertNumber type="currency" currencySymbol="R$" />
+				</p:outputLabel>
+			</p:column>
+
+			<p:column headerText="" width="100">
+				<p:commandButton icon="ui-icon-pencil" update="@form"
+					process="@this">
+					<f:setPropertyActionListener value="#{m}"
+						target="#{medicamentoBean.medicamento}" />
+				</p:commandButton>
+
+				<p:commandButton action="#{medicamentoBean.excluir}" icon="ui-icon-trash" update="tabela"
+					process="@this">
+					<f:setPropertyActionListener value="#{m}"
+						target="#{medicamentoBean.medicamento}" />
+				</p:commandButton>
+			</p:column>
+
+
+		</p:dataTable>
+
+	</h:form>
+
+</h:body>
+</html>
