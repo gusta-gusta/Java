@@ -89,13 +89,13 @@
 			</p:column>
 
 			<p:column headerText="" width="100">
-				<p:commandButton icon="ui-icon-pencil" update="@form"
+				<p:commandButton icon="pi pi-pencil" update="@form"
 					process="@this">
 					<f:setPropertyActionListener value="#{m}"
 						target="#{medicamentoBean.medicamento}" />
 				</p:commandButton>
 
-				<p:commandButton action="#{medicamentoBean.excluir}" icon="ui-icon-trash" update="tabela"
+				<p:commandButton action="#{medicamentoBean.excluir}" icon="pi pi-times" update="tabela"
 					process="@this">
 					<f:setPropertyActionListener value="#{m}"
 						target="#{medicamentoBean.medicamento}" />
