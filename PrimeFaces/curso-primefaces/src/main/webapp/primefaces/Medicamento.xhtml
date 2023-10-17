@@ -15,8 +15,10 @@
 
 
 	<h:form id="form">
-		<p:messages id="msg" autoUpdate="true" />
-
+		<p:messages id="msg" closable="true">
+            <p:autoUpdate/>
+        </p:messages>
+        
 		<p:panelGrid columns="2">
 
 			<p:outputLabel value="Medicamento" />
@@ -92,7 +94,7 @@
 				<p:commandButton icon="pi pi-pencil" update="@form"
 					process="@this">
 					<f:setPropertyActionListener value="#{m}"
-						target="#{medicamentoBean.medicamento}" />
+						target="#{medicamentoBean.medicamento}"/>
 				</p:commandButton>
 
 				<p:commandButton action="#{medicamentoBean.excluir}" icon="pi pi-times" update="tabela"
