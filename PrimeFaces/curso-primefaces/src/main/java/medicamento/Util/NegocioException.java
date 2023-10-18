@@ -1,4 +1,4 @@
-package br.com.medicamento.Util;
+package medicamento.Util;
 
 public class NegocioException extends Exception {
 

@@ -1,4 +1,4 @@
-package br.com.medicamento.DAO;
+package alura.DAO;
 
 import java.io.Serializable;
 import java.util.List;
@@ -6,7 +6,8 @@ import java.util.List;
 import javax.persistence.EntityManager;
 import javax.persistence.Query;
 
-import br.com.medicamento.Modelo.Base;
+import medicamento.DAO.ConnectionFactory; // alterar
+import alura.Modelo.Base;
 
 public class DAO<T extends Base> implements Serializable {
 	
@@ -55,74 +56,5 @@ public class DAO<T extends Base> implements Serializable {
 		Query query = manager.createQuery(jpql);
 		return query.getResultList();
 	}
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-	
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-
 }
+	

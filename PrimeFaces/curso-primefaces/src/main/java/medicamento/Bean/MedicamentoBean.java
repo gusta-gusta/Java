@@ -1,4 +1,4 @@
-package br.com.medicamento.Bean;
+package medicamento.Bean;
 
 import java.io.Serializable;
 import java.util.List;
@@ -8,10 +8,10 @@ import javax.faces.view.ViewScoped;
 import javax.inject.Inject;
 import javax.inject.Named;
 
-import br.com.medicamento.Modelo.Medicamento;
-import br.com.medicamento.Util.Mensagens;
-import br.com.medicamento.Util.NegocioException;
-import br.com.medicamento.service.MedicamentoService;
+import medicamento.Modelo.Medicamento;
+import medicamento.Util.Mensagens;
+import medicamento.Util.NegocioException;
+import medicamento.Service.MedicamentoService;
 
 @Named
 @ViewScoped

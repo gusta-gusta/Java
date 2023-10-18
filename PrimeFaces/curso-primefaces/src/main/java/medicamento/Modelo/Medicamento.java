@@ -1,4 +1,4 @@
-package br.com.medicamento.Modelo;
+package medicamento.Modelo;
 
 import java.io.Serializable;
 import java.math.BigDecimal;

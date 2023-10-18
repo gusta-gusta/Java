@@ -1,4 +1,4 @@
-package br.com.medicamento.Util;
+package medicamento.Util;
 
 import javax.faces.application.FacesMessage;
 import javax.faces.context.FacesContext;

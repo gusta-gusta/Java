@@ -10,7 +10,8 @@
 
 			<!-- Banco de Dados -->
 
-			<property name="javax.persistence.jdbc.url"			value="jdbc:mysql://localhost:3030/medicamentos" />
+			<!-- <property name="javax.persistence.jdbc.url"			value="jdbc:mysql://localhost:3030/medicamentos" /> -->
+			<property name="javax.persistence.jdbc.url"			value="jdbc:mysql://localhost:3030/livraria" />
 			<property name="javax.persistence.jdbc.driver" 		value="com.mysql.cj.jdbc.Driver" />
 			<property name="javax.persistence.jdbc.user"		value="root" />
 			<property name="javax.persistence.jdbc.password"	value="" />

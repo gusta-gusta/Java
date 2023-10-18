@@ -1,13 +1,13 @@
-package br.com.medicamento.service;
+package medicamento.Service;
 
 import java.io.Serializable;
 import java.util.List;
 
 import javax.inject.Inject;
 
-import br.com.medicamento.DAO.DAO;
-import br.com.medicamento.Modelo.Medicamento;
-import br.com.medicamento.Util.NegocioException;
+import medicamento.DAO.DAO;
+import medicamento.Modelo.Medicamento;
+import medicamento.Util.NegocioException;
 
 public class MedicamentoService implements Serializable {
 
