@@ -1,18 +1,23 @@
 package alura.Bean;
 
-import java.io.Serializable;
+import javax.faces.bean.ManagedBean;
 
-import javax.faces.view.ViewScoped;
-import javax.inject.Named;
-
+import alura.DAO.DAO;
 import alura.Modelo.Autor;
 
-@Named
-@ViewScoped
-public class AutorBean implements Serializable{
-	
-	private static final long serialVersionUID = 1L;
-	
-	private Autor autor;
+@ManagedBean
+public class AutorBean {
 
+	private Autor autor = new Autor();
+
+	public Autor getAutor() {
+		return autor;
+	}
+
+	public void gravar() {
+		System.out.println("Gravando autor " + this.autor.getNome());
+
+		new DAO<Autor>(Autor.class).adiciona(this.autor);
+	}
 }
+
