@@ -20,7 +20,7 @@
 		<p:panelGrid columns="2">
 
 			<p:outputLabel value="Titulo: " />
-			<p:inputText size="30" value="#{LivroBean.livro.titulo}"
+			<p:inputText size="30" value="#{livroBean.livro.titulo}"
 				required="true" label="Titulo" />
 
 			<p:outputLabel value="ISBN: " />
@@ -28,7 +28,7 @@
 				value="#{livroBean.livro.isbn}" required="true" label="ISBN" />
 
 			<p:outputLabel value="Preço: " />
-			<p:inputText size="30" value="#{LivroBean.livro.preco}"
+			<p:inputText size="30" value="#{livroBean.livro.preco}"
 				required="true" label="Preço">
 				<f:convertNumber minFractionDigits="2" locale="pt-BR"
 					minIntegerDigits="0" />
@@ -36,17 +36,22 @@
 
 			<p:outputLabel value="Data de Lançamento: " />
 			<p:inputMask mask="99/99/9999" size="30"
-				value="#{LivroBean.livro.dataLancamento}" required="true"
+				value="#{livroBean.livro.dataLancamento}" required="true"
 				label="Data de Lançamento">
 				<f:convertDateTime pattern="dd/MM/yyyy" />
 			</p:inputMask>
 			<p:outputLabel />
 
 			<legend>Dados do Autor</legend>
-				<h:outputLabel value="Selecione um Autor:" for="autor" />
-				<h:selectOneMenu value="#{livroBean.autorId}" >
-					<f:selectItems value="#{livroBean.autores}" var="autor" itemLabel="#{autor.nome}" itemValue="#{autor.id}" />
-				</h:selectOneMenu>
+			<h:outputLabel value="Selecione um Autor:" for="autor" />
+			<h:selectOneMenu value="#{livroBean.autorId}">
+				<f:selectItems value="#{livroBean.autores}" var="autor"
+					itemLabel="#{autor.nome}" itemValue="#{autor.id}" />
+			</h:selectOneMenu>
+		
+			<p:commandButton value="Cadastrar Autor" action="#{livroBean.gravarAutor()}"
+				 style="margin-top: 10px" />
+
 			<p:commandButton value="Cadastrar" action="#{livroBean.gravar()}"
 				update="form" style="margin-top: 10px" />
 

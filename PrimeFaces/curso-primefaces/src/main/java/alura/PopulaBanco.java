@@ -19,6 +19,8 @@ public class PopulaBanco {
 
 		em.getTransaction().begin();
 
+		
+		
 		Autor assis = geraAutor("Machado de Assis");
 		em.persist(assis);
 
