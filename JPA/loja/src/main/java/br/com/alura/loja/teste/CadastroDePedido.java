@@ -3,6 +3,7 @@ package br.com.alura.loja.teste;
 import java.math.BigDecimal;
 import java.util.List;
 import javax.persistence.EntityManager;
+
 import br.com.alura.loja.DAO.CategoriaDAO;
 import br.com.alura.loja.DAO.ClienteDAO;
 import br.com.alura.loja.DAO.PedidoDAO;
