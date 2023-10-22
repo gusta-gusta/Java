@@ -38,7 +38,6 @@
 			<p:inputMask mask="99/99/9999" size="30"
 				value="#{livroBean.livro.dataLancamento}" required="true"
 				label="Data de Lançamento">
-				<f:convertDateTime pattern="dd/MM/yyyy" />
 			</p:inputMask>
 			<p:outputLabel />
 
@@ -48,14 +47,26 @@
 				<f:selectItems value="#{livroBean.autores}" var="autor"
 					itemLabel="#{autor.nome}" itemValue="#{autor.id}" />
 			</h:selectOneMenu>
-		
-			<p:commandButton value="Cadastrar Autor" action="#{livroBean.gravarAutor()}"
-				 style="margin-top: 10px" />
 
-			<p:commandButton value="Cadastrar" action="#{livroBean.gravar()}"
-				update="form" style="margin-top: 10px" />
+			<p:commandButton value="Cadastrar Autor"
+				action="#{livroBean.gravarAutor}" style="margin-top: 10px"
+				update="form tabela" />
+
+			<p:commandButton value="Cadastrar" action="#{livroBean.gravar}"
+				update="form tabela" style="margin-top: 10px" />
 
 		</p:panelGrid>
+
+		<p:dataTable value="#{livroBean.autoresDoLivro}" var="a" id="tabela"
+			paginator="true" rows="1">
+			<p:column headerText="Nome do Autor">
+				<p:outputLabel value="#{a.nome}" />
+			</p:column>
+
+			<p:column headerText="Nome do Livro">
+				<p:outputLabel value="#{livroBean.livro.titulo}" />
+			</p:column>
+		</p:dataTable>
 
 	</h:form>
 </h:body>
