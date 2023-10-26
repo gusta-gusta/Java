@@ -25,7 +25,9 @@
 
 			<p:outputLabel value="ISBN: " />
 			<p:inputMask mask="999-99-999-9999-9" size="13"
-				value="#{livroBean.livro.isbn}" required="true" label="ISBN" />
+				value="#{livroBean.livro.isbn}"
+				validator="#{livroBean.comecaComDigitoUm}" required="true"
+				label="ISBN" />
 
 			<p:outputLabel value="Preço: " />
 			<p:inputText size="30" value="#{livroBean.livro.preco}"
@@ -35,10 +37,10 @@
 			</p:inputText>
 
 			<p:outputLabel value="Data de Lançamento: " />
-			<p:inputMask mask="99/99/9999" size="30"
-				value="#{livroBean.livro.dataLancamento}" required="true"
-				label="Data de Lançamento">
-			</p:inputMask>
+			<p:inputText size="30" value="#{livroBean.livro.dataLancamento.time}"
+				required="true" label="Data de Lançamento">
+				<f:convertDateTime pattern="dd/MM/yy" timeZone="America/Sao_Paulo" />
+			</p:inputText>
 			<p:outputLabel />
 
 			<legend>Dados do Autor</legend>
@@ -57,14 +59,19 @@
 
 		</p:panelGrid>
 
-		<p:dataTable value="#{livroBean.autoresDoLivro}" var="a" id="tabela"
-			paginator="true" rows="1">
-			<p:column headerText="Nome do Autor">
-				<p:outputLabel value="#{a.nome}" />
+		<p:dataTable value="#{livroBean.livros}" var="l" id="tabela"
+			paginator="true" rows="10">
+			<p:column headerText="Titulo">
+				<p:outputLabel value="#{l.titulo}" />
 			</p:column>
 
-			<p:column headerText="Nome do Livro">
-				<p:outputLabel value="#{livroBean.livro.titulo}" />
+			<p:column headerText="ISBN">
+				<p:outputLabel value="#{l.isbn}" />
+			</p:column>
+
+
+			<p:column headerText="Preço">
+				<p:outputLabel value="#{l.preco}" />
 			</p:column>
 		</p:dataTable>
 
