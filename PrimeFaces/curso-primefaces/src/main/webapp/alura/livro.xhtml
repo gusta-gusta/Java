@@ -6,9 +6,10 @@
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
 <h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<h:outputStylesheet library="css" name="file.css" />
-	<title>Livraria</title>
+    <!-- Inclua as bibliotecas do PrimeFaces e do jQuery aqui -->
+    <h:outputScript library="primefaces" name="jquery/jquery.js" target="head" />
+    <h:outputScript library="primefaces" name="jquery/jquery-plugins.js" target="head" />
+    <h:outputScript library="primefaces" name="primefaces.js" target="head" />
 </h:head>
 <h:body>
 
@@ -16,49 +17,62 @@
 		<p:messages id="msg" closable="true">
 			<p:autoUpdate />
 		</p:messages>
+		<fieldset>
+			<p:panelGrid columns="2">
 
-		<p:panelGrid columns="2">
+				<p:outputLabel value="Titulo: " />
+				<p:inputText size="30" value="#{livroBean.livro.titulo}"
+					required="true" label="Titulo" />
 
-			<p:outputLabel value="Titulo: " />
-			<p:inputText size="30" value="#{livroBean.livro.titulo}"
-				required="true" label="Titulo" />
+				<p:outputLabel value="ISBN: " />
+				<p:inputMask mask="999-99-999-9999-9" size="13"
+					value="#{livroBean.livro.isbn}"
+					validator="#{livroBean.comecaComDigitoUm}" required="true"
+					label="ISBN" />
 
-			<p:outputLabel value="ISBN: " />
-			<p:inputMask mask="999-99-999-9999-9" size="13"
-				value="#{livroBean.livro.isbn}"
-				validator="#{livroBean.comecaComDigitoUm}" required="true"
-				label="ISBN" />
+				<p:outputLabel value="Preço: " />
+				<p:inputText size="30" value="#{livroBean.livro.preco}"
+					required="true" label="Preço">
+					<f:convertNumber minFractionDigits="2" locale="pt-BR"
+						minIntegerDigits="0" />
+				</p:inputText>
 
-			<p:outputLabel value="Preço: " />
-			<p:inputText size="30" value="#{livroBean.livro.preco}"
-				required="true" label="Preço">
-				<f:convertNumber minFractionDigits="2" locale="pt-BR"
-					minIntegerDigits="0" />
-			</p:inputText>
+				<p:outputLabel value="Data de Lançamento: " />
+				<p:inputText size="30"
+					value="#{livroBean.livro.dataLancamento.time}" required="true"
+					label="Data de Lançamento">
+					<f:convertDateTime pattern="dd/MM/yyyy"
+						timeZone="America/Sao_Paulo" />
+				</p:inputText>
+				<p:outputLabel />
+			</p:panelGrid>
+		</fieldset>
 
-			<p:outputLabel value="Data de Lançamento: " />
-			<p:inputText size="30" value="#{livroBean.livro.dataLancamento.time}"
-				required="true" label="Data de Lançamento">
-				<f:convertDateTime pattern="dd/MM/yy" timeZone="America/Sao_Paulo" />
-			</p:inputText>
-			<p:outputLabel />
-
+		<fieldset>
 			<legend>Dados do Autor</legend>
 			<h:outputLabel value="Selecione um Autor:" for="autor" />
-			<h:selectOneMenu value="#{livroBean.autorId}">
+			<h:selectOneMenu value="#{livroBean.autorId}" id="autor">
 				<f:selectItems value="#{livroBean.autores}" var="autor"
 					itemLabel="#{autor.nome}" itemValue="#{autor.id}" />
 			</h:selectOneMenu>
 
 			<p:commandButton value="Cadastrar Autor"
-				action="#{livroBean.gravarAutor}" style="margin-top: 10px"
-				update="form tabela" />
+				action="#{livroBean.gravarAutor}" style="margin-top: 10px">
+				<f:ajax execute="autor" />
+			</p:commandButton>
+		</fieldset>
 
+<!-- 		<p:dataTable value="#{livroBean.autoresDoLivro}" var="autor"> 
+			<p:column>
+				<p:outputLabel value="#{autor.nome}" />
+			</p:column>
+		</p:dataTable> -->
+
+		<fieldset>
 			<p:commandButton value="Cadastrar" action="#{livroBean.gravar}"
 				update="form tabela" style="margin-top: 10px" />
-
-		</p:panelGrid>
-
+		</fieldset>
+		
 		<p:dataTable value="#{livroBean.livros}" var="l" id="tabela"
 			paginator="true" rows="10">
 			<p:column headerText="Titulo">
@@ -71,7 +85,17 @@
 
 
 			<p:column headerText="Preço">
-				<p:outputLabel value="#{l.preco}" />
+				<p:outputLabel value="#{l.preco}">
+					<f:convertNumber type="currency" pattern="R$ #0.00"
+						currencySymbol="R$" locale="pt_BR" />
+				</p:outputLabel>
+			</p:column>
+
+			<p:column headerText="Data">
+				<p:outputLabel value="#{l.dataLancamento.time}">
+					<f:convertDateTime pattern="dd/MM/yyyy"
+						timeZone="America/Sao_Paulo" />
+				</p:outputLabel>
 			</p:column>
 		</p:dataTable>
 

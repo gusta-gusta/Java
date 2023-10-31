@@ -60,8 +60,10 @@ public class LivroBean {
 			FacesContext.getCurrentInstance().addMessage("autor", new FacesMessage("Livro deve ter pelo menos um Autor"));
 			return;
 		}
+
 		
 		new DAO<Livro>(Livro.class).adiciona(this.livro);
+		
 	}
 	
 	public void gravarAutor() {
