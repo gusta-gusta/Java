@@ -5,92 +5,109 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
-<h:head>
-	<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
-	<h:outputStylesheet library="css" name="file.css" />
-	<title>Livraria</title>
-</h:head>
-<h:body>
 
-	<h:form id="form">
-		<p:messages id="msg" closable="true">
-			<p:autoUpdate />
-		</p:messages>
+<ui:composition template="_template.xhtml">
+	<ui:define name="titulo">Cadastro de Livro</ui:define>
+	<ui:define name="conteudo">
+		<h:form id="form">
 
-		<p:panelGrid columns="2">
+			<p:messages id="msg" closable="true">
+				<p:autoUpdate />
+			</p:messages>
 
-			<p:outputLabel value="Titulo: " />
-			<p:inputText size="30" value="#{livroBean.livro.titulo}"
-				required="true" label="Titulo" requiredMessage="Título obrigatório"
-				validatorMessage="Título não pode ser superior a 40">
-				<f:validateLength maximum="40" />
-				<f:ajax event="blur" render="msg" />
-			</p:inputText>
+			<p:panelGrid columns="2">
 
-			<p:outputLabel value="ISBN: " />
-			<p:inputMask mask="999-99-999-9999-9" size="13"
-				value="#{livroBean.livro.isbn}"
-				validator="#{livroBean.comecaComDigitoUm}" required="true"
-				label="ISBN" />
+				<p:outputLabel value="Titulo: " />
+				<p:inputText size="30" value="#{livroBean.livro.titulo}"
+					required="false" label="Titulo"
+					requiredMessage="Título obrigatório"
+					validatorMessage="Título não pode ser superior a 40">
+					<f:validateLength maximum="40" />
+					<f:ajax event="blur" render="msg" />
+				</p:inputText>
 
-			<p:outputLabel value="Preço: " />
-			<p:inputText size="30" value="#{livroBean.livro.preco}"
-				required="true" label="Preço">
-				<f:convertNumber minFractionDigits="2" locale="pt-BR"
-					minIntegerDigits="0" />
-			</p:inputText>
+				<p:outputLabel value="ISBN: " />
+				<p:inputMask mask="999-99-999-9999-9" size="13"
+					value="#{livroBean.livro.isbn}"
+					validator="#{livroBean.comecaComDigitoUm}" required="false"
+					label="ISBN" />
 
-			<p:outputLabel value="Data de Lançamento: " />
-			<p:inputText size="30" value="#{livroBean.livro.dataLancamento.time}"
-				required="true" label="Data de Lançamento">
-				<f:convertDateTime pattern="dd/MM/yy" timeZone="America/Sao_Paulo" />
-			</p:inputText>
-			<p:outputLabel />
+				<p:outputLabel value="Preço: " />
+				<p:inputText size="30" value="#{livroBean.livro.preco}"
+					required="true" label="Preço">
+					<f:convertNumber minFractionDigits="2" locale="pt-BR"
+						minIntegerDigits="0" />
+				</p:inputText>
 
-			<legend>Dados do Autor</legend>
-			<h:outputLabel value="Selecione um Autor:" for="autor" />
-			<h:selectOneMenu value="#{livroBean.autorId}" id="autor">
-				<f:selectItems value="#{livroBean.autores}" var="autor"
-					itemLabel="#{autor.nome}" itemValue="#{autor.id}" />
-			</h:selectOneMenu>
+				<p:outputLabel value="Data de Lançamento: " />
+				<p:inputText size="30"
+					value="#{livroBean.livro.dataLancamento.time}" required="true"
+					label="Data de Lançamento">
+					<f:convertDateTime pattern="dd/MM/yy" timeZone="America/Sao_Paulo" />
+				</p:inputText>
+				<p:outputLabel />
 
-			<p:commandButton value="Cadastrar Autor"
-				action="#{livroBean.gravarAutor}" style="margin-top: 10px" />
+				<legend>Dados do Autor</legend>
+				<h:outputLabel value="Selecione um Autor:" for="autor" />
+				<h:selectOneMenu value="#{livroBean.autorId}" id="autor">
+					<f:selectItems value="#{livroBean.autores}" var="autor"
+						itemLabel="#{autor.nome}" itemValue="#{autor.id}" />
+				</h:selectOneMenu>
 
-			<p:commandButton value="Cadastrar" action="#{livroBean.gravar}"
-				style="margin-top: 10px">
-				<f:ajax execute="@form" render="@form :tabelaLivros" />
-			</p:commandButton>
+				<p:commandButton value="Cadastrar Autor"
+					action="#{livroBean.gravarAutor}" style="margin-top: 10px" />
 
-		</p:panelGrid>
+				<p:commandLink value="Cadastrar NOVO Autor"
+					action="#{livroBean.formAutor}" immediate="true" />
 
-		<p:dataTable value="#{livroBean.livros}" var="l" id="tabelaLivros"
-			paginator="true" rows="10">
-			<p:column headerText="Titulo">
-				<p:outputLabel value="#{l.titulo}" />
-			</p:column>
+				<p:commandButton value="Cadastrar" action="#{livroBean.gravar}"
+					style="margin-top: 10px" update="form tabelaLivros">
+					<f:ajax execute="@form" render="@form :tabelaLivros" />
+				</p:commandButton>
 
-			<p:column headerText="ISBN">
-				<p:outputLabel value="#{l.isbn}" />
-			</p:column>
-
-			<p:column headerText="Preço">
-				<p:outputLabel value="#{l.preco}">
-					<f:convertNumber type="currency" pattern="R$ #0.00"
-						currencySymbol="R$" locale="pt_BR" />
-				</p:outputLabel>
-			</p:column>
-
-			<p:column headerText="Data">
-				<p:outputLabel value="#{l.dataLancamento.time}">
-					<f:convertDateTime pattern="dd/MM/yyyy"
-						timeZone="America/Sao_Paulo" />
-				</p:outputLabel>
-			</p:column>
+			</p:panelGrid>
 
 
-		</p:dataTable>
 
-	</h:form>
-</h:body>
+			<p:dataTable value="#{livroBean.livros}" var="l" id="tabelaLivros"
+				paginator="true" rows="10">
+				<p:column headerText="Titulo">
+					<p:outputLabel value="#{l.titulo}" />
+				</p:column>
+
+				<p:column headerText="ISBN">
+					<p:outputLabel value="#{l.isbn}" />
+				</p:column>
+
+				<p:column headerText="Preço">
+					<p:outputLabel value="#{l.preco}">
+						<f:convertNumber type="currency" pattern="R$ #0.00"
+							currencySymbol="R$" locale="pt_BR" />
+					</p:outputLabel>
+				</p:column>
+
+				<p:column headerText="Data">
+					<p:outputLabel value="#{l.dataLancamento.time}">
+						<f:convertDateTime pattern="dd/MM/yyyy"
+							timeZone="America/Sao_Paulo" />
+					</p:outputLabel>
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Editar</f:facet>
+					<p:commandLink value="Editar" action="#{livroBean.editar(l)}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Remover</f:facet>
+					<p:commandLink value="Remover" action="#{livroBean.remover(l)}"
+						update="form tabelaLivros" />
+				</p:column>
+
+
+			</p:dataTable>
+		</h:form>
+	</ui:define>
+
+</ui:composition>
 </html>
