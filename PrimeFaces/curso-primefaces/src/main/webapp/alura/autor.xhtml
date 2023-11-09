@@ -5,27 +5,61 @@
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
 	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
 	xmlns:p="http://primefaces.org/ui">
+
 <ui:composition template="_template.xhtml">
+
 	<ui:define name="titulo">Cadastro de Autor</ui:define>
 	<ui:define name="conteudo">
 
+		<p:breadCrumb style="margin: 5px 0px 40px 0px">
+			<p:menuitem value="Home" />
+			<p:menuitem value="Autor" />
+		</p:breadCrumb>
+
 		<h:form id="form">
 			<fieldset>
-				<p:panelGrid columns="2">
+				<p:panelGrid columns="1">
+					<p:commandButton value="Voltar" action="#{autorBean.voltar}"
+						style="margin: 10px 0px 10px 0px" update="form " />
 
-					<p:outputLabel value="Nome: " />
-					<p:inputText size="30" value="#{autorBean.autor.nome}"
-						required="true" label="Nome" />
+					<p:panelGrid columns="3">
+						<p:outputLabel value="Nome: " />
+						<p:inputText size="30" value="#{autorBean.autor.nome}"
+							required="false" label="Nome" />
 
 
-					<p:commandButton value="Gravar" action="#{autorBean.gravar}"
-						update="form" style="margin-top: 10px" />
+						<p:commandButton value="Gravar" action="#{autorBean.gravar}"
+							update="@form  formAutores:tabelaAutores " />
+
+					</p:panelGrid>
 				</p:panelGrid>
 			</fieldset>
 
-
 		</h:form>
-		</ui:define>
-		</ui:composition>
-		
+		<h:form id="formAutores">
+
+			<p:dataTable value="#{autorBean.autores}" var="a" id="tabelaAutores"
+				paginator="true" rows="10">
+				<p:column headerText="Nome">
+					<p:outputLabel value="#{a.nome}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Editar</f:facet>
+					<p:commandLink value="Editar" action="#{autorBean.editar(a)}" />
+				</p:column>
+
+				<p:column>
+					<f:facet name="header">Remover</f:facet>
+					<p:commandLink value="Remover" action="#{autorBean.remover(a)}"
+						update="form tabelaAutores" />
+				</p:column>
+
+
+			</p:dataTable>
+		</h:form>
+
+	</ui:define>
+</ui:composition>
+
 </html>

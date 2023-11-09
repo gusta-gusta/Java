@@ -58,13 +58,21 @@
 					action="#{livroBean.gravarAutor}" style="margin-top: 10px" />
 
 				<p:commandLink value="Cadastrar NOVO Autor"
-					action="#{livroBean.formAutor}" immediate="true" />
+					action="#{livroBean.formAutor}" immediate="true" update="tabelaAutoresDosLivros">
+					<f:ajax execute="@form" render="@form :tabelaAutoresDosLivros" />
+					</p:commandLink>
 
-				<p:commandButton value="Cadastrar" action="#{livroBean.gravar}"
-					style="margin-top: 10px" update="form tabelaLivros">
-					<f:ajax execute="@form" render="@form :tabelaLivros" />
-				</p:commandButton>
+				<p:dataTable value="#{livroBean.autoresDoLivro}" var="a" id="tabelaAutoresDosLivros"
+					paginator="true" rows="10">
+					<p:column headerText="Nome">
+						<p:outputLabel value="#{a.nome}" />
+					</p:column>
+					</p:dataTable>
 
+					<p:commandButton value="Cadastrar" action="#{livroBean.gravar}"
+						style="margin-top: 10px" update="form tabelaLivros">
+						<f:ajax execute="@form" render="@form :tabelaLivros" />
+					</p:commandButton>
 			</p:panelGrid>
 
 
