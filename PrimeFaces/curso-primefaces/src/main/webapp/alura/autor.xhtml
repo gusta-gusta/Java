@@ -22,11 +22,17 @@
 					<p:commandButton value="Voltar" action="#{autorBean.voltar}"
 						style="margin: 10px 0px 10px 0px" update="form " />
 
-					<p:panelGrid columns="3">
+					<p:panelGrid columns="2">
 						<p:outputLabel value="Nome: " />
 						<p:inputText size="30" value="#{autorBean.autor.nome}"
 							required="false" label="Nome" />
 
+						<p:outputLabel value="E-mail: " for="email" />
+						<p:inputText id="email" size="30" value="#{autorBean.autor.email}"
+							required="false" label="E-mail">
+								<f:passThroughAttribute name="type" value="email"/>
+							</p:inputText>
+						<p:message  for="email" id="messageEmail" />
 
 						<p:commandButton value="Gravar" action="#{autorBean.gravar}"
 							update="@form  formAutores:tabelaAutores " />
@@ -42,6 +48,10 @@
 				paginator="true" rows="10">
 				<p:column headerText="Nome">
 					<p:outputLabel value="#{a.nome}" />
+				</p:column>
+
+				<p:column headerText="E-mail">
+					<p:outputLabel value="#{a.email}" />
 				</p:column>
 
 				<p:column>

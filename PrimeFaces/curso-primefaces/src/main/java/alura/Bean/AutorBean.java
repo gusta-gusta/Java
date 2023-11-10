@@ -34,6 +34,12 @@ public class AutorBean implements Serializable {
 		return "Autor?faces-redirect=true";
 	}
 	
+	public void editar(Autor a ) {
+		System.out.println("O Autor: " + a.getNome() + " está sendo editado....");
+		
+		this.autor = a;
+	}
+	
 	public void gravar() {
 		if (this.autor.getId() == null) {
 			
@@ -55,11 +61,7 @@ public class AutorBean implements Serializable {
 		
 	}
 	
-	public void editar(Autor a ) {
-		System.out.println("O Autor: " + a.getNome() + " está sendo editado....");
-		
-		this.autor = a;
-	}
+
 	
 	public Integer getAutorId() {
 		return autorId;
