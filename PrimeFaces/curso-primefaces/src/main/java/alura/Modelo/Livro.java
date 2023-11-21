@@ -1,5 +1,6 @@
 package alura.Modelo;
 
+import java.io.Serializable;
 import java.util.ArrayList;
 import java.util.Calendar;
 import java.util.List;
@@ -13,7 +14,9 @@ import javax.persistence.Temporal;
 import javax.persistence.TemporalType;
 
 @Entity
-public class Livro {
+public class Livro implements Serializable {
+
+	private static final long serialVersionUID = 1L;
 
 	@Id
 	@GeneratedValue
@@ -23,9 +26,9 @@ public class Livro {
 	private String isbn;
 	private double preco;
 	@Temporal(TemporalType.DATE)
-	private Calendar dataLancamento = Calendar.getInstance(); // Instancia com a data atual
+	private Calendar dataLancamento = Calendar.getInstance();
 
-	@ManyToMany(fetch = FetchType.EAGER)
+	@ManyToMany(fetch=FetchType.EAGER)
 	private List<Autor> autores = new ArrayList<Autor>();
 
 	public List<Autor> getAutores() {
@@ -33,9 +36,7 @@ public class Livro {
 	}
 
 	public void adicionaAutor(Autor autor) {
-		if (!this.autores.contains(autor)) {
-			this.autores.add(autor);
-		}
+		this.autores.add(autor);
 	}
 
 	public Livro() {
@@ -79,6 +80,10 @@ public class Livro {
 
 	public void setDataLancamento(Calendar dataLancamento) {
 		this.dataLancamento = dataLancamento;
+	}
+
+	public void removeAutor(Autor autor) {
+		this.autores.remove(autor);
 	}
 
 }

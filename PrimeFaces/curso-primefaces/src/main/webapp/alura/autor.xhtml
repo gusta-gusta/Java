@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<!DOCTYPE html>
+<!DOCTYPE html PUBLIC "-//W3C//DTD XHTML 1.0 Transitional//EN" "http://www.w3.org/TR/xhtml1/DTD/xhtml1-transitional.dtd">
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
@@ -8,68 +8,84 @@
 
 <ui:composition template="_template.xhtml">
 
-	<ui:define name="titulo">Cadastro de Autor</ui:define>
+	<f:metadata>
+		<f:viewParam name="autorId" value="#{autorBean.autorId}" />
+		<f:viewAction action="#{autorBean.carregarAutorPelaId}"
+			if="#{param.autorId != null}" />
+	</f:metadata>
+
+	<ui:define name="titulo">
+				Novo Autor
+		</ui:define>
+
 	<ui:define name="conteudo">
+		<h:form id="autor">
+			<p:fieldset>
+				<legend>Dados do Autor</legend>
+				<h:panelGrid columns="3">
 
-		<p:breadCrumb style="margin: 5px 0px 40px 0px">
-			<p:menuitem value="Home" />
-			<p:menuitem value="Autor" />
-		</p:breadCrumb>
+					<p:outputLabel value="Nome:" for="nome" />
+					<p:inputText id="nome" value="#{autorBean.autor.nome}"
+						required="true"
+						validatorMessage="Nome do autor precisa ter no minimo 5 caracteres.">
+						<f:validateLength minimum="5" />
+						<f:ajax event="blur" render="messageNome" />
+					</p:inputText>
+					<p:message for="nome" id="messageNome" />
 
-		<h:form id="form">
-			<fieldset>
-				<p:panelGrid columns="1">
-					<p:commandButton value="Voltar" action="#{autorBean.voltar}"
-						style="margin: 10px 0px 10px 0px" update="form " />
+					<p:outputLabel value="Email:" for="email" />
+					<p:inputText id="email" value="#{autorBean.autor.email}"
+						required="true" validatorMessage="E-mail inválido.">
+						<f:attribute name="type" value="email" />
+						<f:passThroughAttribute name="placeholder" value="Email do autor" />
+						<f:validateRegex pattern=".+@.+" />
+						<f:ajax event="blur" render="messageNome" />
+					</p:inputText>
 
-					<p:panelGrid columns="2">
-						<p:outputLabel value="Nome: " />
-						<p:inputText size="30" value="#{autorBean.autor.nome}"
-							required="false" label="Nome" />
+					<p:message for="email" id="messageEmail" />
 
-						<p:outputLabel value="E-mail: " for="email" />
-						<p:inputText id="email" size="30" value="#{autorBean.autor.email}"
-							required="false" label="E-mail">
-								<f:passThroughAttribute name="type" value="email"/>
-							</p:inputText>
-						<p:message  for="email" id="messageEmail" />
-
-						<p:commandButton value="Gravar" action="#{autorBean.gravar}"
-							update="@form  formAutores:tabelaAutores " />
-
-					</p:panelGrid>
-				</p:panelGrid>
-			</fieldset>
-
+					<p:commandButton value="Gravar" action="#{autorBean.gravar}"
+						process="@form" update="@form :formTabelaAutores" />
+				</h:panelGrid>
+			</p:fieldset>
 		</h:form>
-		<h:form id="formAutores">
+		<h:form id="formTabelaAutores">
 
-			<p:dataTable value="#{autorBean.autores}" var="a" id="tabelaAutores"
-				paginator="true" rows="10">
-				<p:column headerText="Nome">
-					<p:outputLabel value="#{a.nome}" />
-				</p:column>
+			<p:dataList value="#{autorBean.autores}" var="autor" type="definition">
+				<f:facet name="header">
+           		 Basic
+        	</f:facet>
+				<h:commandLink styleClass="pi pi-trash" style="float:left;margin-right:10px" action="#{autorBean.remover(autor)}" />
+				<h:commandLink styleClass="pi pi-user-edit" style="float:left;margin-right:10px">
+					<f:setPropertyActionListener value="#{autor}"
+						target="#{autorBean.autor}" />
+				</h:commandLink>
+        		#{autor.nome} - #{autor.email}
+    		</p:dataList>
 
-				<p:column headerText="E-mail">
-					<p:outputLabel value="#{a.email}" />
-				</p:column>
+			<h:dataTable value="#{autorBean.autores}" var="autor"
+				id="tabelaAutors">
+				<h:column>
+					<f:facet name="header">Nome</f:facet>
+					<h:outputText value="#{autor.nome}" />
+				</h:column>
 
-				<p:column>
-					<f:facet name="header">Editar</f:facet>
-					<p:commandLink value="Editar" action="#{autorBean.editar(a)}" />
-				</p:column>
+				<h:column>
+					<f:facet name="header">Alterar</f:facet>
+					<h:commandLink value="altera">
+						<f:setPropertyActionListener value="#{autor}"
+							target="#{autorBean.autor}" />
+					</h:commandLink>
+				</h:column>
 
-				<p:column>
+				<h:column>
 					<f:facet name="header">Remover</f:facet>
-					<p:commandLink value="Remover" action="#{autorBean.remover(a)}"
-						update="form tabelaAutores" />
-				</p:column>
-
-
-			</p:dataTable>
+					<h:commandLink value="remove" action="#{autorBean.remover(autor)}" />
+				</h:column>
+			</h:dataTable>
 		</h:form>
-
 	</ui:define>
+
 </ui:composition>
 
 </html>
