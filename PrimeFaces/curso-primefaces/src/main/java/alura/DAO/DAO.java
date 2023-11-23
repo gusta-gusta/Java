@@ -80,16 +80,14 @@ public class DAO<T> {
 		return (int) result;
 	}
 
-	public List<T> listaTodosPaginada(int firstResult, int maxResults) {
-		EntityManager em = new JPAUtil().getEntityManager();
-		CriteriaQuery<T> query = em.getCriteriaBuilder().createQuery(classe);
-		query.select(query.from(classe));
+	
+	public int quantidadeDeElementos() {
+        EntityManager em = new JPAUtil().getEntityManager();
+        long result = (Long) em.createQuery("select count(n) from " + classe.getSimpleName() + " n")
+                .getSingleResult();
+        em.close();
 
-		List<T> lista = em.createQuery(query).setFirstResult(firstResult)
-				.setMaxResults(maxResults).getResultList();
-
-		em.close();
-		return lista;
-	}
+        return (int) result;
+    }
 
 }

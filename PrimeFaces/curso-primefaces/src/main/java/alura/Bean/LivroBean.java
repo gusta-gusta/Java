@@ -1,4 +1,5 @@
 package alura.Bean;import java.io.Serializable;
+import java.util.Arrays;
 import java.util.List;
 
 import javax.faces.application.FacesMessage;
@@ -22,6 +23,9 @@ public class LivroBean implements Serializable {
 
 	private Integer autorId;
 
+	private List<Livro> livros;
+	
+
 	public void setAutorId(Integer autorId) {
 		this.autorId = autorId;
 	}
@@ -33,9 +37,19 @@ public class LivroBean implements Serializable {
 	public Livro getLivro() {
 		return livro;
 	}
+	
+	private List<String> generos = Arrays.asList("Romance", "Drama", "Ação");
+
+	public List<String> getGeneros() {
+	    return generos;
+	}
 
 	public List<Livro> getLivros() {
-		return new DAO<Livro>(Livro.class).listaTodos();
+		DAO<Livro> dao = new DAO<Livro>(Livro.class);
+		if (this.livros == null) {
+			this.livros = dao.listaTodos();
+		}
+		return livros;
 	}
 
 	public List<Autor> getAutores() {
@@ -53,7 +67,7 @@ public class LivroBean implements Serializable {
 	public void gravarAutor() {
 		Autor autor = new DAO<Autor>(Autor.class).buscaPorId(this.autorId);
 		this.livro.adicionaAutor(autor);
-		System.out.println("Escrito por: " + autor.getNome());
+		System.out.println(livro.getTitulo() + " Foi Escrito por: " + autor.getNome());
 	}
 
 	public void gravar() {
@@ -65,10 +79,12 @@ public class LivroBean implements Serializable {
 			return;
 		}
 
+		DAO<Livro> dao = new DAO<Livro>(Livro.class);
 		if(this.livro.getId() == null) {
-			new DAO<Livro>(Livro.class).adiciona(this.livro);
+			dao.adiciona(this.livro);
+			this.livros = dao.listaTodos();
 		} else {
-			new DAO<Livro>(Livro.class).atualiza(this.livro);
+			dao.atualiza(this.livro);
 		}
 
 		this.livro = new Livro();
@@ -80,6 +96,7 @@ public class LivroBean implements Serializable {
 	}
 	
 	public void removerAutorDoLivro(Autor autor) {
+		System.out.println("Removendo Autor:  " + autor.getNome() + " do Livro: " + livro.getTitulo());
 		this.livro.removeAutor(autor);
 	}
 	

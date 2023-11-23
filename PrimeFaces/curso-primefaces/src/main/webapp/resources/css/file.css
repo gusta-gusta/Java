@@ -1,7 +1,5 @@
 @charset "UTF-8";
 
-
-
 body {
 	font-size: 20px;
 	margin: 20px;
@@ -12,3 +10,4 @@ h1 {
 	font-weight: 450;
 	color: #3b4d64 !important;
 }
+

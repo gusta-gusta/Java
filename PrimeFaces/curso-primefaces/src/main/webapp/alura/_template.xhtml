@@ -3,18 +3,36 @@
 <html xmlns="http://www.w3.org/1999/xhtml"
 	xmlns:h="http://xmlns.jcp.org/jsf/html"
 	xmlns:f="http://xmlns.jcp.org/jsf/core"
-	xmlns:ui="http://xmlns.jcp.org/jsf/facelets">
+	xmlns:ui="http://xmlns.jcp.org/jsf/facelets"
+	xmlns:p="http://primefaces.org/ui">
 
 <h:head>
-	<h:outputStylesheet library="css" name="file.css" />
-	<h:outputStylesheet name="primeicons/primeicons.css" library="primefaces" />
+	<h:outputStylesheet library="css" name="/resources/css/file.css" />
+	<h:outputStylesheet name="primeicons/primeicons.css"
+		library="primefaces" />
+		<script src="/resources/javascript/mudarTema.js"></script>
 </h:head>
 <h:body>
 	<div id="cabecalho">
 		<h:graphicImage library="img" name="ifi.png" />
 
+            <h:form rendered="#{usuarioLogado != null}">
+            <p:button onclick="mudarTema('escuro')">Tema Escuro</p:button>
+    		<p:button> onclick="mudarTema('claro')">Tema Claro</p:button>
+            </h:form>
+
+		<p:growl id="messages" showDetail="true" />
+
 		<h:form rendered="#{usuarioLogado != null}">
-			<h:commandLink value="Logout" action="#{loginBean.deslogar}" />
+			<p:menuButton value="Options">
+				<p:menuitem value="Livros" action="livro" icon="pi pi-book"
+					update="messages" />
+				<p:menuitem value="Autores" action="autor" icon="pi pi-user-plus"
+					update="messages" />
+				<p:separator />
+				<p:menuitem value="Logout" action="#{loginBean.deslogar}"
+					icon="pi pi-external-link" />
+			</p:menuButton>
 		</h:form>
 
 		<h1>

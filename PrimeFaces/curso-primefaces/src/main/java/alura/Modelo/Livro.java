@@ -27,6 +27,8 @@ public class Livro implements Serializable {
 	private double preco;
 	@Temporal(TemporalType.DATE)
 	private Calendar dataLancamento = Calendar.getInstance();
+	private String genero;
+
 
 	@ManyToMany(fetch=FetchType.EAGER)
 	private List<Autor> autores = new ArrayList<Autor>();
@@ -76,6 +78,14 @@ public class Livro implements Serializable {
 
 	public Calendar getDataLancamento() {
 		return dataLancamento;
+	}
+	
+	public String getGenero() {
+		return genero;
+	}
+	
+	public void setGenero(String genero) {
+		this.genero = genero;
 	}
 
 	public void setDataLancamento(Calendar dataLancamento) {
