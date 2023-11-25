@@ -6,8 +6,8 @@ import java.util.List;
 import java.util.Random;
 
 import javax.annotation.PostConstruct;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 
 import org.primefaces.model.charts.ChartData;
 import org.primefaces.model.charts.axes.cartesian.CartesianScales;
@@ -27,8 +27,8 @@ import alura.DAO.DAO;
 import alura.Modelo.Livro;
 import alura.Modelo.Venda;
 
-@ManagedBean
-@ViewScoped
+@Named
+@ViewScoped // javax.faces.view.ViewScoped;
 public class VendaBean implements Serializable {
 	
 	private static final long serialVersionUID = 1L;

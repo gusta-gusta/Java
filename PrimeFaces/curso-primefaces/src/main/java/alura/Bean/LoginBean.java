@@ -1,17 +1,22 @@
 package alura.Bean;
 
+import java.io.Serializable;
+
 import javax.faces.application.FacesMessage;
-import javax.faces.bean.ManagedBean;
-import javax.faces.bean.ViewScoped;
 import javax.faces.context.FacesContext;
+import javax.faces.view.ViewScoped;
+import javax.inject.Named;
 
 import alura.DAO.UsuarioDAO;
 import alura.Modelo.Usuario;
 
-@ManagedBean
-@ViewScoped
-public class LoginBean {
 
+@Named
+@ViewScoped // javax.faces.view.ViewScoped;
+public class LoginBean implements Serializable{
+
+	private static final long serialVersionUID = 1L;
+	
 	private Usuario usuario = new Usuario();
 
 	public Usuario getUsuario() {
