@@ -1,5 +1,6 @@
 package alura.DAO;
 
+import java.io.Serializable;
 import java.util.List;
 
 import javax.annotation.PostConstruct;
@@ -8,7 +9,12 @@ import javax.persistence.EntityManager;
 
 import alura.Modelo.Autor;
 
-public class AutorDAO {
+public class AutorDAO implements Serializable{
+
+	/**
+	 * 
+	 */
+	private static final long serialVersionUID = 1L;
 
 	@Inject
 	EntityManager em;

@@ -19,31 +19,21 @@ public class DAO<T> {
 
 		// consegue a entity manager
 
-		// abre transacao
-		em.getTransaction().begin();
-
 		// persiste o objeto
 		em.persist(t);
-
-		// commita a transacao
-		em.getTransaction().commit();
 
 	}
 
 	public void remove(T t) {
-		em.getTransaction().begin();
 
 		em.remove(em.merge(t));
 
-		em.getTransaction().commit();
 	}
 
 	public void atualiza(T t) {
-		em.getTransaction().begin();
 
 		em.merge(t);
 
-		em.getTransaction().commit();
 	}
 
 	public List<T> listaTodos() {
@@ -61,18 +51,15 @@ public class DAO<T> {
 	}
 
 	public int contaTodos() {
-		long result = (Long) em.createQuery("select count(n) from livro n")
-				.getSingleResult();
+		long result = (Long) em.createQuery("select count(n) from livro n").getSingleResult();
 
 		return (int) result;
 	}
 
-	
 	public int quantidadeDeElementos() {
-        long result = (Long) em.createQuery("select count(n) from " + classe.getSimpleName() + " n")
-                .getSingleResult();
+		long result = (Long) em.createQuery("select count(n) from " + classe.getSimpleName() + " n").getSingleResult();
 
-        return (int) result;
-    }
+		return (int) result;
+	}
 
 }

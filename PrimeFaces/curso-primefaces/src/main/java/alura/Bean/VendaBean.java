@@ -7,6 +7,7 @@ import java.util.Random;
 
 import javax.annotation.PostConstruct;
 import javax.faces.view.ViewScoped;
+import javax.inject.Inject;
 import javax.inject.Named;
 
 import org.primefaces.model.charts.ChartData;
@@ -24,6 +25,8 @@ import org.primefaces.model.charts.pie.PieChartDataSet;
 import org.primefaces.model.charts.pie.PieChartModel;
 
 import alura.DAO.DAO;
+import alura.DAO.LivroDAO;
+import alura.DAO.VendaDAO;
 import alura.Modelo.Livro;
 import alura.Modelo.Venda;
 
@@ -35,6 +38,13 @@ public class VendaBean implements Serializable {
 	
 	private BarChartModel barModel;
 	private PieChartModel pieModel;
+	
+	@Inject
+	private VendaDAO vendaDAO;
+	
+	@Inject
+	private LivroDAO livroDAO;
+	
 	
 	@PostConstruct
     public void init() {
@@ -72,12 +82,6 @@ public class VendaBean implements Serializable {
     public PieChartModel getPieModel() {
         return pieModel;
     }
-
-    public void setPieModel(PieChartModel pieModel) {
-        this.pieModel = pieModel;
-    }
-    
-	
 	
 	public void createBarModel() {
         barModel = new BarChartModel();
@@ -167,24 +171,12 @@ public class VendaBean implements Serializable {
 		return barModel;
 	}
 
-	public void setBarModel(BarChartModel barModel) {
-		this.barModel = barModel;
-	}
-
-
-
-
-
-
-
-
-
 
 
 	public List<Venda> getVendas(long seed) {
 		
 		List<Venda> vendas = new ArrayList<Venda>();
-		List<Livro> livros = new DAO<Livro>(Livro.class).listaTodos();
+		List<Livro> livros = livroDAO.listaTodos();
 
 		Random random = new Random(seed);
 		for ( Livro livro : livros) {
@@ -197,6 +189,30 @@ public class VendaBean implements Serializable {
 	}
 
 	
+	
+	
+	
+	
+	public VendaDAO getVendaDAO() {
+		return vendaDAO;
+	}
+	public void setVendaDAO(VendaDAO vendaDAO) {
+		this.vendaDAO = vendaDAO;
+	}
+	public LivroDAO getLivroDAO() {
+		return livroDAO;
+	}
+	public void setLivroDAO(LivroDAO livroDAO) {
+		this.livroDAO = livroDAO;
+	}
+	public void setBarModel(BarChartModel barModel) {
+		this.barModel = barModel;
+	}
+	
+    public void setPieModel(PieChartModel pieModel) {
+        this.pieModel = pieModel;
+    }
+
 	
 	
 }
