@@ -24,7 +24,6 @@ import org.primefaces.model.charts.optionconfig.title.Title;
 import org.primefaces.model.charts.pie.PieChartDataSet;
 import org.primefaces.model.charts.pie.PieChartModel;
 
-import alura.DAO.DAO;
 import alura.DAO.LivroDAO;
 import alura.DAO.VendaDAO;
 import alura.Modelo.Livro;
