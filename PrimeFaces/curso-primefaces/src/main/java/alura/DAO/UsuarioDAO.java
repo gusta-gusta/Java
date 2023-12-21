@@ -1,19 +1,24 @@
 package alura.DAO;
 
+import java.io.Serializable;
 import java.util.List;
 
+import javax.inject.Inject;
 import javax.persistence.EntityManager;
 import javax.persistence.TypedQuery;
 
 import alura.Modelo.Usuario;
-import alura.Util.JPAUtil;
 
-public class UsuarioDAO {
+public class UsuarioDAO implements Serializable {
+ 
+	private static final long serialVersionUID = 1L;
+	
+	@Inject
+	EntityManager em;
 	
 	public boolean existe(Usuario usuario) {
 		
 		
-		EntityManager em = new JPAUtil().getEntityManager();
 		TypedQuery<Usuario> query = em.createQuery("SELECT u FROM Usuario u WHERE u.email = :pEmail and u.senha = :pSenha  ", Usuario.class);
 		
 		query.setParameter("pEmail", usuario.getEmail());
@@ -23,7 +28,6 @@ public class UsuarioDAO {
 			
 
 			if (resultados != null && resultados.size() ==1) {
-				em.close();
 				return true;
 				
 			}
