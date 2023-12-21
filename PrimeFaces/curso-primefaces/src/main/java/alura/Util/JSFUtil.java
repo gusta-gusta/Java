@@ -9,7 +9,7 @@ public class JSFUtil {
 
 	
 	@Produces // produz o entity
-	@RequestScoped // Vai produzir a cada requisição
+	@RequestScoped // Vai produzir a cada requisição.
 	public FacesContext getFacesContext() {
 		return FacesContext.getCurrentInstance();
 	}
