@@ -1,2 +1,9 @@
-/.metadata/
 /target/
+/bin/
+/.settings/
+/.metadata/
+.classpath
+.project
+/pom.xml
+pom.xml
+/build/
