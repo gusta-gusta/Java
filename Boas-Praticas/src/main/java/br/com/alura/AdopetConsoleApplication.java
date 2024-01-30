@@ -1,9 +1,10 @@
 package br.com.alura;
 
+import java.util.Scanner;
+
 import br.com.alura.client.ClientHttpConfiguration;
 import br.com.alura.service.AbrigoService;
 import br.com.alura.service.PetService;
-import java.util.Scanner;
 
 public class AdopetConsoleApplication {
 
@@ -15,7 +16,7 @@ public class AdopetConsoleApplication {
         try {
             int opcaoEscolhida = 0;
             while (opcaoEscolhida != 5) {
-                System.out.println("\nDIGITE O NÚMERO DA OPERAÇÃO DESEJADA:");
+                System.out.println("\nDIGITE O NÃšMERO DA OPERAÃ‡ÃƒO DESEJADA:");
                 System.out.println("1 -> Listar abrigos cadastrados");
                 System.out.println("2 -> Cadastrar novo abrigo");
                 System.out.println("3 -> Listar pets do abrigo");
@@ -36,7 +37,7 @@ public class AdopetConsoleApplication {
                 } else if (opcaoEscolhida == 5) {
                     break;
                 } else {
-                    System.out.println("NÚMERO INVÁLIDO!");
+                    System.out.println("NÃšMERO INVÃ�LIDO!");
                     opcaoEscolhida = 0;
                 }
             }
