@@ -158,3 +158,154 @@ java.net.URISyntaxException: Illegal character in path at index 16: file:/C:/Pro
 2025-03-13 11:31:07,023 [Worker-26: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
 2025-03-13 11:31:07,025 [Worker-26: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2025-03-13 11:31:07,025 [Worker-26: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 14:18:16,171 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is up-to-date. Trying to read.
+2025-03-17 14:23:35,915 [ForkJoinPool.commonPool-worker-10] ERROR o.e.m.e.l.MavenRuntimeClasspathProvider - Illegal character in path at index 16: file:/C:/Program Files/Eclipse/eclipse-jee-2022-03-R-win32-x86_64/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.18.3.20220227-1319/jars/
+java.net.URISyntaxException: Illegal character in path at index 16: file:/C:/Program Files/Eclipse/eclipse-jee-2022-03-R-win32-x86_64/eclipse/plugins/org.eclipse.m2e.maven.runtime_1.18.3.20220227-1319/jars/
+	at java.base/java.net.URI$Parser.fail(URI.java:2974)
+	at java.base/java.net.URI$Parser.checkChars(URI.java:3145)
+	at java.base/java.net.URI$Parser.parseHierarchical(URI.java:3227)
+	at java.base/java.net.URI$Parser.parse(URI.java:3175)
+	at java.base/java.net.URI.<init>(URI.java:623)
+	at java.base/java.net.URL.toURI(URL.java:1056)
+	at org.eclipse.m2e.editor.lemminx.MavenRuntimeClasspathProvider.addJarsFromBundle(MavenRuntimeClasspathProvider.java:81)
+	at org.eclipse.m2e.editor.lemminx.MavenRuntimeClasspathProvider.get(MavenRuntimeClasspathProvider.java:66)
+	at org.eclipse.m2e.editor.lemminx.MavenRuntimeClasspathProvider.get(MavenRuntimeClasspathProvider.java:1)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.stream.ReferencePipeline$3$1.accept(ReferencePipeline.java:197)
+	at java.base/java.util.HashMap$EntrySpliterator.forEachRemaining(HashMap.java:1850)
+	at java.base/java.util.stream.AbstractPipeline.copyInto(AbstractPipeline.java:509)
+	at java.base/java.util.stream.AbstractPipeline.wrapAndCopyInto(AbstractPipeline.java:499)
+	at java.base/java.util.stream.ForEachOps$ForEachOp.evaluateSequential(ForEachOps.java:150)
+	at java.base/java.util.stream.ForEachOps$ForEachOp$OfRef.evaluateSequential(ForEachOps.java:173)
+	at java.base/java.util.stream.AbstractPipeline.evaluate(AbstractPipeline.java:234)
+	at java.base/java.util.stream.ReferencePipeline.forEach(ReferencePipeline.java:596)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLExtensionRegistry.getXMLLSClassPathExtensions(XMLExtensionRegistry.java:81)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.getExtensionJarPaths(XMLLanguageServer.java:142)
+	at org.eclipse.wildwebdeveloper.xml.internal.XMLLanguageServer.<init>(XMLLanguageServer.java:83)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance0(Native Method)
+	at java.base/jdk.internal.reflect.NativeConstructorAccessorImpl.newInstance(NativeConstructorAccessorImpl.java:77)
+	at java.base/jdk.internal.reflect.DelegatingConstructorAccessorImpl.newInstance(DelegatingConstructorAccessorImpl.java:45)
+	at java.base/java.lang.reflect.Constructor.newInstanceWithCaller(Constructor.java:499)
+	at java.base/java.lang.reflect.Constructor.newInstance(Constructor.java:480)
+	at org.eclipse.core.internal.registry.osgi.RegistryStrategyOSGI.createExecutableExtension(RegistryStrategyOSGI.java:204)
+	at org.eclipse.core.internal.registry.ExtensionRegistry.createExecutableExtension(ExtensionRegistry.java:920)
+	at org.eclipse.core.internal.registry.ConfigurationElement.createExecutableExtension(ConfigurationElement.java:246)
+	at org.eclipse.core.internal.registry.ConfigurationElementHandle.createExecutableExtension(ConfigurationElementHandle.java:63)
+	at org.eclipse.lsp4e.LanguageServersRegistry$ExtensionLanguageServerDefinition.createConnectionProvider(LanguageServersRegistry.java:127)
+	at org.eclipse.lsp4e.LanguageServerWrapper.lambda$1(LanguageServerWrapper.java:222)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.run(CompletableFuture.java:1768)
+	at java.base/java.util.concurrent.CompletableFuture$AsyncSupply.exec(CompletableFuture.java:1760)
+	at java.base/java.util.concurrent.ForkJoinTask.doExec(ForkJoinTask.java:373)
+	at java.base/java.util.concurrent.ForkJoinPool$WorkQueue.topLevelExec(ForkJoinPool.java:1182)
+	at java.base/java.util.concurrent.ForkJoinPool.scan(ForkJoinPool.java:1655)
+	at java.base/java.util.concurrent.ForkJoinPool.runWorker(ForkJoinPool.java:1622)
+	at java.base/java.util.concurrent.ForkJoinWorkerThread.run(ForkJoinWorkerThread.java:165)
+2025-03-17 14:24:47,976 [Worker-23: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 14:24:47,976 [Worker-23: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 14:24:47,978 [Worker-23: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 14:24:47,979 [Worker-23: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 14:31:51,241 [Worker-21: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 14:31:51,242 [Worker-21: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 14:31:51,244 [Worker-21: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 14:31:51,245 [Worker-21: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 14:45:12,100 [Worker-35: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 14:45:12,101 [Worker-35: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 14:45:12,103 [Worker-35: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 14:45:12,104 [Worker-35: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 14:46:06,958 [Worker-35: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 14:46:06,960 [Worker-35: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 14:46:06,961 [Worker-35: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 14:46:06,962 [Worker-35: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 14:46:42,392 [Worker-33: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 14:46:42,393 [Worker-33: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 14:46:42,395 [Worker-33: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 14:46:42,396 [Worker-33: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:06:09,235 [Worker-43: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:06:09,237 [Worker-43: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:06:09,238 [Worker-43: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:06:09,239 [Worker-43: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:06:32,602 [Worker-43: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:06:32,603 [Worker-43: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:06:32,603 [Worker-43: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:06:32,604 [Worker-43: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:11:20,209 [Worker-42: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:11:20,210 [Worker-42: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:11:20,212 [Worker-42: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:11:20,213 [Worker-42: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:12:23,702 [Worker-49: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:12:23,703 [Worker-49: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:12:23,706 [Worker-49: Launching PrincipalComBusca] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:12:23,707 [Worker-49: Launching PrincipalComBusca] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:13:34,156 [Worker-50: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:13:34,157 [Worker-50: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:13:34,158 [Worker-50: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:13:34,159 [Worker-50: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:13:37,087 [Worker-46: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update started
+2025-03-17 15:13:38,053 [Worker-46: Updating Maven Project] INFO  o.e.m.c.i.l.LifecycleMappingFactory - Using org.eclipse.m2e.jdt.JarLifecycleMapping lifecycle mapping for MavenProject: 2944-java-screenmatch-consumindo-webservice:2944-java-screenmatch-consumindo-webservice:0.0.1-SNAPSHOT @ C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\pom.xml.
+2025-03-17 15:13:38,375 [Worker-46: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Adding source folder /2944-java-screenmatch-consumindo-webservice/src
+2025-03-17 15:13:38,376 [Worker-46: Updating Maven Project] INFO  o.e.m.j.i.AbstractJavaProjectConfigurator - Not adding source folder /2944-java-screenmatch-consumindo-webservice/src/test/java because it overlaps with /2944-java-screenmatch-consumindo-webservice/src
+2025-03-17 15:13:38,570 [Worker-46: Updating Maven Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:13:38,571 [Worker-46: Updating Maven Project] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:13:38,573 [Worker-46: Updating Maven Project] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:13:38,574 [Worker-46: Updating Maven Project] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:13:38,917 [Worker-46: Updating Maven Project] INFO  o.e.m.c.i.p.ProjectConfigurationManager - Update completed: 1 sec
+2025-03-17 15:13:39,135 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:13:39,136 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:13:39,137 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:13:39,139 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:13:48,266 [Worker-47: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:13:48,267 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:13:48,268 [Worker-47: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:13:48,268 [Worker-47: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:14:06,105 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:14:06,106 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:14:06,108 [Worker-46: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:14:06,108 [Worker-46: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:21:45,711 [Worker-55: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:21:45,712 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:21:45,713 [Worker-55: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:21:45,714 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:23:14,236 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:23:14,237 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:23:14,238 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:23:14,239 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:23:17,377 [Worker-58: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:23:17,378 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:23:17,379 [Worker-58: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:23:17,380 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:24:27,964 [Worker-55: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:24:27,965 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:24:27,966 [Worker-55: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:24:27,967 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:25:37,540 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:25:37,543 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:25:37,546 [Worker-49: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:25:37,547 [Worker-49: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:26:33,313 [Worker-54: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:26:33,315 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:26:33,316 [Worker-54: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:26:33,317 [Worker-54: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:26:38,486 [Worker-56: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:26:38,487 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:26:38,488 [Worker-56: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:26:38,488 [Worker-56: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:26:57,781 [Worker-58: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:26:57,782 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:26:57,783 [Worker-58: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:26:57,784 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:27:15,504 [Worker-58: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:27:15,505 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:27:15,505 [Worker-58: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:27:15,506 [Worker-58: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:27:39,375 [Worker-53: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:27:39,375 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:27:39,376 [Worker-53: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:27:39,377 [Worker-53: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:29:39,984 [Worker-55: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:29:39,985 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:29:39,986 [Worker-55: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:29:39,987 [Worker-55: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
+2025-03-17 15:30:11,582 [Worker-61: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:30:11,583 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\main\resources
+2025-03-17 15:30:11,584 [Worker-61: Building] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
+2025-03-17 15:30:11,585 [Worker-61: Building] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
