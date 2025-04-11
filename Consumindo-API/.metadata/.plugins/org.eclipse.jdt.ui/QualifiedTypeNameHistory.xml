@@ -4,7 +4,6 @@
     <fullyQualifiedTypeName name="java.net.http.HttpResponse.BodyHandlers"/>
     <fullyQualifiedTypeName name="br.com.alura.screenmatch.modelos.Titulo"/>
     <fullyQualifiedTypeName name="com.google.gson.annotations.SerializedName"/>
-    <fullyQualifiedTypeName name="com.google.gson.Gson"/>
     <fullyQualifiedTypeName name="com.google.gson.GsonBuilder"/>
     <fullyQualifiedTypeName name="com.google.gson.FieldNamingPolicy"/>
     <fullyQualifiedTypeName name="java.time.Duration"/>
@@ -15,4 +14,8 @@
     <fullyQualifiedTypeName name="java.lang.RuntimeException"/>
     <fullyQualifiedTypeName name="java.lang.Exception"/>
     <fullyQualifiedTypeName name="br.com.alura.screenmatch.excecao.ErroDeConversaoDeAnoException"/>
+    <fullyQualifiedTypeName name="java.io.FileWriter"/>
+    <fullyQualifiedTypeName name="java.util.ArrayList"/>
+    <fullyQualifiedTypeName name="java.util.List"/>
+    <fullyQualifiedTypeName name="com.google.gson.Gson"/>
 </qualifiedTypeNameHistroy>
