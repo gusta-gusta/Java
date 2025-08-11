@@ -390,3 +390,4 @@ java.net.URISyntaxException: Illegal character in path at index 16: file:/C:/Pro
 2025-07-11 11:26:56,808 [Worker-52: Launching desafioCEP] WARN  o.e.m.c.i.embedder.EclipseLogger - Using platform encoding (Cp1252 actually) to copy filtered resources, i.e. build is platform dependent!
 2025-07-11 11:26:56,808 [Worker-52: Launching desafioCEP] INFO  o.e.m.c.i.embedder.EclipseLogger - skip non existing resourceDirectory C:\Users\rodriguesgsr\git\2944-java-screenmatch-consumindo-webservice\src\test\resources
 2025-07-21 08:56:10,717 [Worker-2: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
+2025-08-07 09:17:09,982 [Worker-4: Loading available Gradle versions] INFO  o.e.b.c.i.u.g.PublishedGradleVersions - Gradle version information cache is out-of-date. Trying to update.
